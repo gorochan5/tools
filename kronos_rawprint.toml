@@ -1,0 +1,22 @@
+[general]
+log_level = "info"
+max_concurrent_connections = 64
+shutdown_timeout_seconds = 30
+log_directory = "./logs"
+
+# Global default limits for printers that don't override them
+[default_limits]
+max_job_size_mb = 16
+max_queue_jobs = 50
+receive_timeout_seconds = 60
+allowed_cidrs = ["0.0.0.0/0", "::/0"]
+
+# Zebra printer in Almoxarifado (Zebra ZD220 - USB)
+[printers.bh_almox]
+windows_queue = "ZDesigner ZD220-203dpi ZPL"
+bind_address = "0.0.0.0"
+port = 9100
+max_job_size_mb = 8
+max_queue_jobs = 30
+receive_timeout_seconds = 45
+allowed_cidrs = ["127.0.0.1/32", "192.168.0.0/16", "10.0.0.0/8", "172.16.0.0/12"]
